@@ -31,9 +31,29 @@ MiniJava Optimization Lab is an educational compiler project designed to demonst
 
 ## 🏗️ Compiler Architecture
 
-The following diagram illustrates the processing workflow, from source validation to optimized output.
+The workflow illustrates source validation, intermediate code generation, and successive optimization stages.
 
-<img src="https://github.com/user-attachments/assets/9051721a-5113-4114-b1df-8f35e0939bc3" alt="OPTIMORPH application preview" width="450"/>
+```mermaid
+flowchart LR
+    A(["Source Program"]) --> B["Parsing & Validation"]
+    B --> C{"Valid?"}
+    C -- Yes --> D["TAC Generation"]
+    D --> E["Constant Folding"]
+    E --> F["Constant Propagation"]
+    F --> G["Dead Code Elimination"]
+    G --> H(["Optimized Output"])
+    C -- No --> I["Diagnostics"]
+    I -. Retry .-> A
+
+    classDef default fill:#FFFFFF,stroke:#94A3B8,color:#1E293B,stroke-width:1px
+    classDef decision fill:#FFFFFF,stroke:#64748B,color:#1E293B,stroke-width:1px
+    classDef endpoint fill:#FFFFFF,stroke:#475569,color:#0F172A,stroke-width:1.5px
+
+    class C decision
+    class A,H endpoint
+
+    linkStyle default stroke:#94A3B8,stroke-width:1px
+```
 
 *Note: The diagram represents the overall workflow. In the current implementation, TAC is generated separately from the existing expression-based optimization stages.*
 
