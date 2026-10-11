@@ -1,6 +1,6 @@
-# ⚡ MiniJava Optimization Lab
+# ⚡ OPTIMORPH
 
-### 🧠 An Interactive Compiler Optimization Playground
+> ###  An Interactive Compiler Optimization Playground
 
 Explore compiler internals through an interactive Java desktop application. Parse a small arithmetic language, generate Three-Address Code (TAC), experiment with optimization techniques, and inspect diagnostics through a clean Swing interface.
 
@@ -31,25 +31,9 @@ MiniJava Optimization Lab is an educational compiler project designed to demonst
 
 ## 🏗️ Compiler Architecture
 
-The following diagram illustrates the intended processing workflow.
+The following diagram illustrates the processing workflow, from source validation to optimized output.
 
-```mermaid
-flowchart TD
-    A["📝 Source Program"] --> B["🔍 Parsing and Validation"]
-    B --> C["Diagnostics"]
-    B --> D["TAC Generation"]
-    D --> E["Constant Folding"]
-    E --> F["Constant Propagation"]
-    F --> G["Dead-Code Elimination"]
-    G --> H["Optimized Output"]
-
-    C -. "Errors prevent optimization" .-> I["⚠️ Diagnostics Panel"]
-
-    style A fill:#E8F0FE,stroke:#4285F4,color:#172554
-    style D fill:#EDE9FE,stroke:#8B5CF6,color:#312E81
-    style G fill:#DCFCE7,stroke:#22C55E,color:#14532D
-    style I fill:#FEE2E2,stroke:#EF4444,color:#7F1D1D
-```
+<img src="https://github.com/user-attachments/assets/9051721a-5113-4114-b1df-8f35e0939bc3" alt="OPTIMORPH application preview" width="450"/>
 
 *Note: The diagram represents the overall workflow. In the current implementation, TAC is generated separately from the existing expression-based optimization stages.*
 
